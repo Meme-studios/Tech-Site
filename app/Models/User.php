@@ -9,6 +9,7 @@ use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Jetstream\HasTeams;
 use Laravel\Sanctum\HasApiTokens;
+use App\Traits\Encryptable;
 
 class User extends Authenticatable
 {
@@ -25,7 +26,17 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'nickname', 'username', 'email', 'password',
+    ];
+
+    /**
+     * The attributes that are encrypted
+     */
+    protected $encryptable = [
+        'nickname',
+        'username',
+        'email',
+        'password',
     ];
 
     /**

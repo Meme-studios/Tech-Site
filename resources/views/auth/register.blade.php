@@ -10,8 +10,13 @@
             @csrf
 
             <div>
-                <x-jet-label value="Name" />
-                <x-jet-input class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
+                <x-jet-label value="Nickname (changeable later)" />
+                <x-jet-input class="block mt-1 w-full" type="text" name="nickname" :value="old('nickname')" required autofocus autocomplete="nickname" />
+            </div>
+
+            <div>
+                <x-jet-label value="Username (unique therefore not changeable)" />
+                <x-jet-input class="block mt-1 w-full" type="text" name="username" :value="old('username')" required autofocus autocomplete="username" />
             </div>
 
             <div class="mt-4">
